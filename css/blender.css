@@ -1,55 +1,49 @@
-body
-{
+body {
     color: antiquewhite;
     background-color: rgb(51, 51, 51);
 }
 
-h1
-{
+h1 {
     padding-top: 5%;
 }
 
-.topBar nav{
+.topBar nav {
     justify-content: center;
     background-color: rgb(31, 31, 31);
-    display: flex;   
+    display: flex;
 }
 
-
-div.topBar
-{
-    top: 48;
+div.topBar {
+    top: 48px;
     left: 0px;
     position: fixed;
     align-content: center;
     margin: auto;
-    width: 100%; 
+    width: 100%;
 }
 
-.linkBox
-{
+.linkBox {
     text-align: center;
     top: 0px;
-    bottom: 0px;    
+    bottom: 0px;
     height: 100%;
     width: 20%;
     line-height: 150%;
     font-size: 200%;
 }
 
-.linkBox:hover a
-{
+.linkBox:hover a {
     display: block;
     size: 100%;
     background-color: rgb(211, 211, 211);
-    color: #00421c; 
+    color: #00421c;
 }
 
-a{
+a {
     text-decoration: none;
     color: #008035;
 }
 
-a:hover{
-    color: #00e45f; 
+a:hover {
+    color: #00e45f;
 }
