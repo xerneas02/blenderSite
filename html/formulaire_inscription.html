@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../css/blender.css">
         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
         <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
     </head>
     <body>
         <div class="toptopBar">
@@ -30,17 +31,27 @@
                 <div><img src="../img/Blender_logo.png"></div>
                 <p>Se connecter avec un compte<br>Blender</p>
                 <form action="/my-handling-form-page" method="post">
-                    <div>
-                      <input type="email" id="mail" name="user_email" placeholder="Adresse e-mail" />
-                    </div>
+                    <div class = "pageInscription">
+                        <div>
+                            <select id="selection_pays" name="user_pays" placeholder="Pays">
+                                <option value = "">
+                                    Pays
+                                </option>
+                            </select>
+                        <div>
 
-                    <div>
-                        <input type="password" id="pass" name="password" placeholder="Mot de passe"/>
-                    </div>
-                    <div>
-                        <input type="button" class="button" value="Se connecter"/>
+                        <input type="email" id="mail" name="user_email" placeholder="Adresse e-mail" />
+                        </div>
+
+                        <div>
+                            <input type="password" id="pass" name="password" placeholder="Mot de passe"/>
+                        </div>
+                        <div>
+                            <input type="button" class="button" value="Se connecter"/>
+                        </div>
                     </div>
                   </form>
+                  <p id="creerCompte"> Vous avez déjà un compte? <a href="formulaire_connexion.html">Se connecter! </a></p>
             </div>
         </div>
         <script src="../script/script.js" async defer></script>
