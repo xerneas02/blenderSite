@@ -23,15 +23,16 @@
             <p>Se connecter avec un compte<br>Blender</p>
             <form action="/my-handling-form-page" method="post">
                 <div>
-                    <input type="email" id="mail" name="user_email" placeholder="Adresse e-mail" />
+                    <input type="email" class="label" id="email" name="user_email" placeholder="Adresse e-mail" />
                 </div>
 
                 <div>
-                    <input type="password" id="pass" name="password" placeholder="Mot de passe" />
+                    <input type="password" class="label" id="pass" name="password" placeholder="Mot de passe" />
                 </div>
                 <div>
-                    <input type="button" class="button" value="Se connecter" />
+                    <button type="button" class="button" id="logIn"> Se connecter </button>
                 </div>
+                <div id="message"></div>
                 <p id="creerCompte"> Vous n'avez pas encore de compte? <a href="formulaire_inscription.html">Créez en un! </a></p>
             </form>
         </div>
