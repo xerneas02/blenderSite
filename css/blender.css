@@ -21,6 +21,35 @@ h1 {
     margin-left: 10px;
 }
 
+
+.boxSignBox
+{
+	justify-content: center;
+	position: absolute;	
+	float: left;
+	display: flex;
+	left: 35%;
+	width: 110%;
+	font-size: 100%;
+	-ms-transform: translateY(-50%);
+ 	transform: translateY(-50%);
+	top: 50%;	
+}
+
+div.signBox	
+{
+	position: relative;
+	font-size: 75%;
+	margin-right: 10px;
+	height: 75%;
+	color:#eeeeee;
+	border: solid;
+	width: 7%;
+	border-radius: 10px;
+	border-width: 3px;
+	
+}
+
 div.toptopBar
 {
     top: 0px;
@@ -33,7 +62,7 @@ div.toptopBar
     background-color: rgb(12, 12, 12);
     display: flex;
     align-items: flex-start;
-    font-size: 200%;
+    font-size: xx-large;
     text-align: center;
     flex-direction: row;
     color: rgb(232, 125, 13);
@@ -56,17 +85,26 @@ div.topBar {
     bottom: 0px;
     height: 100%;
     width: 20%;
-    font-size: 200%;
+    font-size: 30px;
 }
 
-.linkBox:hover a {
-    display: block;
-    size: 100%;
-    background-color: rgb(211, 211, 211);
-    color: #00421c;
+.signBox a{
+	text-decoration: none;
+    color: #eeeeee;
 }
 
-a {
+
+.signBox:hover a{
+	display: block;
+	text-decoration: none;
+    color: #7e7e7e;
+}
+
+div.signBox:hover{
+	border-color: #7e7e7e;
+}	
+
+.linkBox a {
     text-decoration: none;
     color: #008035;
 }
@@ -194,3 +232,86 @@ form {
 	margin-left: .5em;
 	
   }
+
+.linkBox a:hover {
+    display: block;
+    background-color: rgb(211, 211, 211);
+    color: #00421c;
+}
+
+@media screen and (max-width: 1282px) {
+	.boxSignBox
+	{	
+		font-size: 75%;	
+	}
+	
+}
+
+@media screen and (max-width: 1000px) {
+	.boxSignBox
+	{	
+		font-size: 65%;	
+	}
+	
+}
+
+@media screen and (max-width: 850px) {
+	.boxSignBox
+	{	
+		font-size: 50%;	
+	}	
+}
+
+@media screen and (max-width: 800px) {
+	.linkBox{
+		width: 23%;
+	}
+	
+}
+
+@media screen and (max-width: 680px) {
+	.linkBox{
+		width: 25%;
+	}
+	.boxSignBox
+	{	
+		font-size: 60%;	
+	}
+}
+
+@media screen and (max-width: 630px) {
+	.linkBox{
+		width: 30%;
+	}
+	
+}
+
+@media screen and (max-width: 525px) {
+	.linkBox{
+		width: 33%;
+	}
+
+	.boxSignBox
+	{	
+		font-size: 50%;	
+	}	
+	
+}
+
+@media screen and (max-width: 480px) {
+	.linkBox{
+		font-size: 25px;
+	}
+	
+}
+
+@media screen and (max-width: 400px) {
+	.linkBox{
+		font-size: 20px;
+	}
+	.boxSignBox
+	{	
+		font-size: 45%;	
+	}
+	
+}
