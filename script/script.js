@@ -1,5 +1,6 @@
+window.onscroll = function() { scroll() }
 
-window.onscroll = function() {scroll()}
+$("#top").load("../html/top.html");
 
 /*var pays_file = new XMLHttpRequest();
 pays_file.open("GET", "file://../html/country.txt", false);
@@ -28,25 +29,22 @@ Promise.all([fetch('../html/country.txt') .then(response => response.text())]).t
 
 
 
-function scroll(){
+
+function scroll() {
     offSet = 48
     var topBar = document.getElementsByClassName("topBar")
-    
-    
 
-    if (window.pageYOffset < offSet) 
-    {
+
+
+    if (window.pageYOffset < offSet) {
         pos = "absolute"
-        T = offSet.toString()+"px"
-    }
-    else 
-    {
+        T = offSet.toString() + "px"
+    } else {
         pos = "fixed"
-        T = "0px"     
+        T = "0px"
     }
     console.log(T)
-    for( i = 0 ; i < topBar.length ; i++)
-    {
+    for (i = 0; i < topBar.length; i++) {
         topBar[i].style.position = pos
         topBar[i].style.top = T
     }

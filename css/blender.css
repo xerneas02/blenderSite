@@ -13,45 +13,39 @@ h1 {
     display: flex;
 }
 
-.toptopBar img
-{
+.toptopBar img {
     max-width: 70px;
     max-height: 48px;
     margin-right: 10px;
     margin-left: 10px;
 }
 
-
-.boxSignBox
-{
-	justify-content: center;
-	position: absolute;	
-	float: left;
-	display: flex;
-	left: 35%;
-	width: 110%;
-	font-size: 100%;
-	-ms-transform: translateY(-50%);
- 	transform: translateY(-50%);
-	top: 50%;	
+.boxSignBox {
+    justify-content: center;
+    position: absolute;
+    float: left;
+    display: flex;
+    left: 35%;
+    width: 110%;
+    font-size: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 50%;
 }
 
-div.signBox	
-{
-	position: relative;
-	font-size: 75%;
-	margin-right: 10px;
-	height: 75%;
-	color:#eeeeee;
-	border: solid;
-	width: 7%;
-	border-radius: 10px;
-	border-width: 3px;
-	
+div.signBox {
+    position: relative;
+    font-size: 75%;
+    margin-right: 10px;
+    height: 75%;
+    color: #eeeeee;
+    border: solid;
+    width: 7%;
+    border-radius: 10px;
+    border-width: 3px;
 }
 
-div.toptopBar
-{
+div.toptopBar {
     top: 0px;
     left: 0px;
     margin: 0px;
@@ -76,7 +70,7 @@ div.topBar {
     align-content: center;
     margin: auto;
     width: 100%;
-	z-index: 1;
+    z-index: 1;
 }
 
 .linkBox {
@@ -88,23 +82,23 @@ div.topBar {
     font-size: 30px;
 }
 
-.signBox a{
-	text-decoration: none;
+.signBox a {
+    text-decoration: none;
     color: #eeeeee;
 }
 
-
-.signBox:hover a{
-	display: block;
-	text-decoration: none;
+.signBox:hover a {
+    display: block;
+    text-decoration: none;
     color: #7e7e7e;
 }
 
-div.signBox:hover{
-	border-color: #7e7e7e;
-}	
+div.signBox:hover {
+    border-color: #7e7e7e;
+}
 
 .linkBox a {
+    display: block;
     text-decoration: none;
     color: #008035;
 }
@@ -113,25 +107,23 @@ a:hover {
     color: #00e45f;
 }
 
-div.signUp
-{
-	font: 1em sans-serif;
-	top:60px;
-	left: 60px;
-	width: 70px;
-	height: 30px;
-	box-sizing: border-box;
-	/* Pour harmoniser le look & feel des bordures des champs texte */
-	border: 1px solid #999;
-	border-radius: 5px;
-	background-color: rgb(32, 32, 32);
+div.signUp {
+    font: 1em sans-serif;
+    top: 60px;
+    left: 60px;
+    width: 70px;
+    height: 30px;
+    box-sizing: border-box;
+    /* Pour harmoniser le look & feel des bordures des champs texte */
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: rgb(32, 32, 32);
 }
 
-div.backgroundFormulaire
-{
+div.backgroundFormulaire {
     margin: 0px;
-	top: 0px;
-	left: 0px;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100vh;
     position: relative;
@@ -140,28 +132,26 @@ div.backgroundFormulaire
     display: flex;
 }
 
-div.pageFormulaire
-{
-	margin: 0px;
-	top: 100px;
+div.pageFormulaire {
+    margin: 0px;
+    top: 100px;
     width: 470px;
     height: 700px;
-	border-radius: 10px;
+    border-radius: 10px;
     position: relative;
     justify-content: center;
-	flex-direction: column;
+    flex-direction: column;
     background-color: rgb(32, 32, 32);
-	font-family: 'Arial Black', Arial, sans-serif;
+    font-family: 'Arial Black', Arial, sans-serif;
     display: flex;
-	text-align: center;
+    text-align: center;
 }
 
 ::placeholder {
-	color: rgb(255, 255, 255);
-  }
+    color: rgb(255, 255, 255);
+}
 
-.pageFormulaire img
-{
+.pageFormulaire img {
     max-width: 100px;
     max-height: 100px;
 }
@@ -186,24 +176,23 @@ div.pageFormulaire
 }
 
 form {
-	margin: 0 auto;
-	width: 400px;
-  }
-  
-  form div + div {
-	margin-top: 1em;
-  }
-  
-  label {
-	/* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
-	display: inline-block;
-	width: 90px;
-	text-align: right;
-  }
+    margin: 0 auto;
+    width: 400px;
+}
 
-  
-  input, textarea {
-	/* Pour s'assurer que tous les champs texte ont la même police.
+form div+div {
+    margin-top: 1em;
+}
+
+label {
+    /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+input, textarea {
+    /* Pour s'assurer que tous les champs texte ont la même police.
 	   Par défaut, les textarea ont une police monospace */
 	font: 1em sans-serif;
   
@@ -242,9 +231,8 @@ form {
   button {
 	/* Cette marge supplémentaire représente grosso modo le même espace que celui
 	   entre les étiquettes et les champs texte */
-	margin-left: .5em;
-	
-  }
+    margin-left: .5em;
+}
 
 .linkBox a:hover {
     display: block;
@@ -342,78 +330,64 @@ option:hover
 }
 
 @media screen and (max-width: 1282px) {
-	.boxSignBox
-	{	
-		font-size: 75%;	
-	}
-	
+    .boxSignBox {
+        font-size: 75%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
-	.boxSignBox
-	{	
-		font-size: 65%;	
-	}
-	
+    .boxSignBox {
+        font-size: 65%;
+    }
 }
 
 @media screen and (max-width: 850px) {
-	.boxSignBox
-	{	
-		font-size: 50%;	
-	}	
+    .boxSignBox {
+        font-size: 50%;
+    }
 }
 
 @media screen and (max-width: 800px) {
-	.linkBox{
-		width: 23%;
-	}
-	
+    .linkBox {
+        width: 23%;
+    }
 }
 
 @media screen and (max-width: 680px) {
-	.linkBox{
-		width: 25%;
-	}
-	.boxSignBox
-	{	
-		font-size: 60%;	
-	}
+    .linkBox {
+        width: 25%;
+    }
+    .boxSignBox {
+        font-size: 60%;
+    }
 }
 
 @media screen and (max-width: 630px) {
-	.linkBox{
-		width: 30%;
-	}
-	
+    .linkBox {
+        width: 30%;
+    }
 }
 
 @media screen and (max-width: 525px) {
-	.linkBox{
-		width: 33%;
-	}
-
-	.boxSignBox
-	{	
-		font-size: 50%;	
-	}	
-	
+    .linkBox {
+        width: 33%;
+    }
+    .boxSignBox {
+        font-size: 50%;
+    }
 }
 
 @media screen and (max-width: 480px) {
-	.linkBox{
-		font-size: 25px;
-	}
-	
+    .linkBox {
+        font-size: 25px;
+    }
 }
 
 @media screen and (max-width: 400px) {
-	.linkBox{
-		font-size: 20px;
-	}
-	.boxSignBox
-	{	
-		font-size: 45%;	
-	}
-	
+    .linkBox {
+        font-size: 20px;
+    }
+    .boxSignBox {
+        font-size: 45%;
+    }
 }
