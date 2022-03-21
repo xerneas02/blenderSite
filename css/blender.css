@@ -271,7 +271,6 @@ div.toptopBar
 div.topBar {
     top: 48px;
     left: 0px;
-    position: fixed;
     align-content: center;
     margin: auto;
     width: 100%;
