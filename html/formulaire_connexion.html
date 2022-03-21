@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blender</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/blender.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
+</head>
+
+<body>
+    <top id="top"></top>
+    <div class="backgroundFormulaire">
+        <div class="pageFormulaire">
+            <div><img src="../img/Blender_logo.png"></div>
+            <p>Se connecter avec un compte<br>Blender</p>
+            <form action="/my-handling-form-page" method="post">
+                <div>
+                    <input type="email" class="label" id="email" name="user_email" placeholder="Adresse e-mail" />
+                </div>
+
+                <div>
+                    <input type="password" class="label" id="pass" name="password" placeholder="Mot de passe" />
+                </div>
+                <div>
+                    <button type="button" class="button" id="logIn"> Se connecter </button>
+                </div>
+                <div id="message"></div>
+                <p id="creerCompte"> Vous n'avez pas encore de compte? <a href="formulaire_inscription.html">Créez en un! </a></p>
+            </form>
+        </div>
+    </div>
+    <script src="../script/script.js" async defer></script>
+</body>
+
+</html>
