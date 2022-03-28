@@ -22,6 +22,17 @@ function charIsLetter(char) {
     return char.toLowerCase() !== char.toUpperCase();
   }
 
+function checkPseudo(pwd, labels) 
+{
+    var nbre = /....../;
+    if(!nbre.test(pwd))
+    {
+        invalidArguments(labels, "Votre pseudo doit contenir au moins 6 caractères!");
+        return false;
+    }
+    return true;
+}
+
 function checkPasswordComplexity(pwd, labels) {
     var nbre = /......../;
     var letterSmall = /[a-z]/; 
@@ -72,6 +83,15 @@ function checkValue() {
             invalidArguments(labels[i], "Email invalide.");
             clear("email");
             return;
+        }
+
+        if (labels[i].id == "pseudo") 
+        {
+            if(!checkPseudo(labels[i].value, labels[i]))
+            {
+                clear("pseudo");
+                return;
+            }
         }
 
         if (labels[i].id == "pass") {
