@@ -2,6 +2,47 @@ window.onscroll = function() { scroll() }
 
 $("#top").load("../html/top.html");
 
+const pays           = document.getElementById("selection_pays");
+const nom            = document.getElementById("nom");
+const prenom         = document.getElementById("prenom");
+const pseudo         = document.getElementById("pseudo");
+const email          = document.getElementById("email");
+const password       = document.getElementById("pass");
+const secondPassword = document.getElementById("verif");
+
+if(nom != null) {
+    verifNom = () => {return testLabels(empty, nom)}
+    nom.addEventListener("blur", verifNom);
+}
+
+if(prenom != null) {
+    verifPrenom = () => {return testLabels(empty, prenom)}
+    prenom.addEventListener("blur", verifPrenom);
+}
+
+if(pseudo != null) {
+    verifPseudo = () => {return testLabels(empty, pseudo) && testLabels(checkPseudo, pseudo)}
+    pseudo.addEventListener("blur", verifPseudo);
+}
+
+if(email != null) {
+    verifEmail = () => {return testLabels(empty, email) && testLabels(checkEmail, email)}
+    email.addEventListener("blur", verifEmail);
+}
+
+if(password != null) {
+    verifPassword = () => {return testLabels(empty, password) && testLabels(checkPassword, password)}
+    password.addEventListener("blur", verifPassword);
+}
+
+if(secondPassword != null) {
+    verifSecondPassword = () => {return testLabels(empty, secondPassword) && testLabels(sameContent, secondPassword)}
+    secondPassword.addEventListener("blur", verifSecondPassword);
+}
+
+
+
+
 var buttonLogIn = document.getElementById("logIn")
 if (buttonLogIn != null) buttonLogIn.onclick = function() {
     checkValue();
@@ -18,96 +59,121 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function charIsLetter(char) {
-    return char.toLowerCase() !== char.toUpperCase();
-  }
-
-function checkPseudo(pwd, labels) 
-{
+function checkPseudo(pwd) {
     var nbre = /....../;
-    if(!nbre.test(pwd))
-    {
-        invalidArguments(labels, "Votre pseudo doit contenir au moins 6 caractères!");
-        return false;
+    if (!nbre.test(pwd)) {
+        return "Votre pseudo doit contenir au moins 6 caractères!";
     }
-    return true;
+    return "";
 }
 
-function checkPasswordComplexity(pwd, labels) {
+function checkEmail(email) {
+
+    var regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    if (email.match(regEmail)) {
+        return "";
+    }
+    return "Email invalide.";
+
+}
+
+function checkPassword(value) {
     var nbre = /......../;
-    var letterSmall = /[a-z]/; 
+    var letterSmall = /[a-z]/;
     var letterBig = /[A-Z]/;
     var number = /[0-9]/;
-    if (!number.test(pwd))
-    {
-        invalidArguments(labels, "Votre mot de passe doit contenir un chiffre!");
-        return false;
+    if (!number.test(value)) {
+        return "Votre mot de passe doit contenir un chiffre!";
+    } else if (!letterSmall.test(value)) {
+        return "Votre mot de passe doit contenir une lettre minuscule!";
+    } else if (!letterBig.test(value)) {
+        return "Votre mot de passe doit contenir une lettre majuscule!";
+    } else if (!nbre.test(value)) {
+        return "Votre mot de passe doit contenir au moins 8 caractères!";
     }
-    else if (!letterSmall.test(pwd))
-    {
-        invalidArguments(labels, "Votre mot de passe doit contenir une lettre minuscule!");
-        return false;
+    return "";
+}
+
+function empty(value) {
+    if (value.length == 0) {
+        return "Le champ est vide.";
     }
-    else if (!letterBig.test(pwd))
-    {
-        invalidArguments(labels, "Votre mot de passe doit contenir une lettre majuscule!");
-        return false;
+    return "";
+}
+
+function sameContent(content, compare = document.getElementById("pass").value) {
+    if (content != compare) {
+        return "Entrer le même mot de passe dans 'Confirmer mot de passe'.";
     }
-    else if (!nbre.test(pwd))
+    return "";
+}
+
+function emptyPays(value){
+    if(value == "")
     {
-        invalidArguments(labels, "Votre mot de passe doit contenir au moins 8 caractères!");
-        return false;
+        return "Choissez un pays."
     }
-    return true;
+    return "";
+}
+
+function testLabels(testFunc, label) {
+    message = testFunc(label.value);
+    if (0 == message.length) return true;
+    invalidArguments(label, message);
+    return false;
 }
 
 function checkValue() {
     var labels = document.getElementsByClassName("label");
-    var password = "";
-    singUp = false;
+    var singUp = false;
+    var pseudo = ""
+    var datas = [];
 
-    var pays = document.getElementById("selection_pays");
-    if (pays != null && pays.value == "") {
-        invalidArguments(pays, "Choissez un pays.");
+    if (pays != null && !testLabels(emptyPays, pays)) {
         return;
     }
+    datas.push(pays.value);
 
     for (i = 0; i < labels.length; i++) {
-        if (labels[i].value.length == 0) {
-            invalidArguments(labels[i], "Le champ " + labels[i].name + " est vide.");
+        if (!testLabels(empty, labels[i])) {
             return;
-        }
-
-        if (labels[i].id == "email" && (labels[i].value.indexOf('@') < 1 || labels[i].value.indexOf('@') > labels[i].value.length - 2)) {
-            console.log(labels[i].value)
-            invalidArguments(labels[i], "Email invalide.");
-            clear("email");
-            return;
-        }
-
-        if (labels[i].id == "pseudo") 
-        {
-            if(!checkPseudo(labels[i].value, labels[i]))
-            {
+        } 
+        
+        else if (labels[i].id == "nom") {
+            datas.push(labels[i].value);
+        } 
+        
+        else if (labels[i] == "prenom") {
+            datas.push(labels[i].value);
+        } 
+        
+        else if (labels[i].id == "email") {
+            if (!testLabels(checkEmail, labels[i])) {
+                datas.push(labels[i].value);
+                clear("email");
+                return;
+            }
+        } 
+        
+        else if (labels[i].id == "pseudo") {
+            if (!testLabels(checkPseudo, labels[i])) {
                 clear("pseudo");
                 return;
             }
+            pseudo = labels[i].value;
         }
-
-        if (labels[i].id == "pass") {
-            if (checkPasswordComplexity(labels[i].value, labels[i]))
-                password = labels[i].value;
-            else
-            {
+        
+        else if (labels[i].id == "pass") {
+            if (!testLabels(checkPassword, labels[i])) {
                 clear("pass");
                 clear("verif");
                 return;
-            } 
-        }
-
-        if (labels[i].id == "verif") {
-            if (labels[i].value != password) {
-                invalidArguments(labels[i], "Entrer le même mot de passe dans 'Confirmer mot de passe'.");
+            }
+            datas.push(labels[i].value);
+        } 
+        
+        else if (labels[i].id == "verif") {
+            if (!testLabels(sameContent, labels[i])) {
                 clear("pass");
                 clear("verif");
                 return;
@@ -116,13 +182,21 @@ function checkValue() {
         }
     }
 
-
     if (singUp) {
         writeMessage("Vous êtes enregistré.", "rgb(33, 211, 42)")
     } else {
         writeMessage("Vous êtes connécté.", "rgb(33, 211, 42)")
     }
-    clear();
+
+    profileTxt = pseudo + "{"
+    for (i = 0; i < datas.length; i++) {
+        profileTxt += datas[i] + ",";
+    }
+    profileTxt = profileTxt.slice(0, profileTxt.length - 2)
+    profileTxt += "}\n"
+    console.log(profileTxt);
+
+    clearAll();
 }
 
 async function invalidArguments(argument, message = "Erreur") {
@@ -139,8 +213,15 @@ function writeMessage(message, color = "red") {
 }
 
 function clear(labelId) {
-    var labels = document.getElementById(labelId);
-    labels.value = "";
+    var label = document.getElementById(labelId);
+    label.value = "";
+}
+
+function clearAll() {
+    var labels = document.getElementsByClassName("label");
+    for (i = 0; i < labels.length; i++) {
+        labels[i].value = "";
+    }
 }
 
 function scroll() {
