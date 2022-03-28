@@ -96,7 +96,7 @@ function checkPassword(value) {
 
 function empty(value) {
     if (value.length == 0) {
-        return "Le champ est vide.";
+        return "Un champ est vide.";
     }
     return "";
 }
