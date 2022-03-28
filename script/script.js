@@ -18,45 +18,78 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function charIsLetter(char) {
+    return char.toLowerCase() !== char.toUpperCase();
+  }
+
+function checkPasswordComplexity(pwd, labels) {
+    var nbre = /......../;
+    var letterSmall = /[a-z]/; 
+    var letterBig = /[A-Z]/;
+    var number = /[0-9]/;
+    if (!number.test(pwd))
+    {
+        invalidArguments(labels, "Votre mot de passe doit contenir un chiffre!");
+        return false;
+    }
+    else if (!letterSmall.test(pwd))
+    {
+        invalidArguments(labels, "Votre mot de passe doit contenir une lettre minuscule!");
+        return false;
+    }
+    else if (!letterBig.test(pwd))
+    {
+        invalidArguments(labels, "Votre mot de passe doit contenir une lettre majuscule!");
+        return false;
+    }
+    else if (!nbre.test(pwd))
+    {
+        invalidArguments(labels, "Votre mot de passe doit contenir au moins 8 caractères!");
+        return false;
+    }
+    return true;
+}
+
 function checkValue() {
     var labels = document.getElementsByClassName("label");
     var password = "";
     singUp = false;
 
-    var pay = document.getElementById("selection_pays");
-    if (pay != null && pay.value == "") {
-        invalidArguments(pay, "Choissez un pay.");
-        clear();
+    var pays = document.getElementById("selection_pays");
+    if (pays != null && pays.value == "") {
+        invalidArguments(pays, "Choissez un pays.");
         return;
     }
 
     for (i = 0; i < labels.length; i++) {
-        if (labels[i].value.length == "") {
+        if (labels[i].value.length == 0) {
             invalidArguments(labels[i], "Le champ " + labels[i].name + " est vide.");
-            clear();
             return;
         }
 
         if (labels[i].id == "email" && (labels[i].value.indexOf('@') < 1 || labels[i].value.indexOf('@') > labels[i].value.length - 2)) {
             console.log(labels[i].value)
             invalidArguments(labels[i], "Email invalide.");
-            clear();
+            clear("email");
             return;
         }
 
         if (labels[i].id == "pass") {
-            if (labels[i].value.length < 7) {
-                invalidArguments(labels[i], "Mot de passe trop cours minimum 7 caractères.");
-                clear();
+            if (checkPasswordComplexity(labels[i].value, labels[i]))
+                password = labels[i].value;
+            else
+            {
+                clear("pass");
+                clear("verif");
                 return;
-            }
-            password = labels[i].value;
+            } 
         }
 
         if (labels[i].id == "verif") {
             if (labels[i].value != password) {
                 invalidArguments(labels[i], "Entrer le même mot de passe dans 'Confirmer mot de passe'.");
-                clear();
+                clear("pass");
+                clear("verif");
                 return;
             }
             singUp = true;
@@ -85,11 +118,9 @@ function writeMessage(message, color = "red") {
     text.textContent = message;
 }
 
-function clear() {
-    var labels = document.getElementsByClassName("label");
-    for (i = 0; i < labels.length; i++) {
-        labels[i].value = "";
-    }
+function clear(labelId) {
+    var labels = document.getElementById(labelId);
+    labels.value = "";
 }
 
 function scroll() {
