@@ -2,12 +2,13 @@ window.onscroll = function() { scroll() }
 
 $("#top").load("../html/top.html");
 
+const registerForm   = document.getElementById("regForm");
 const pays           = document.getElementById("selection_pays");
-const nom            = document.getElementById("nom");
-const prenom         = document.getElementById("prenom");
-const pseudo         = document.getElementById("pseudo");
-const email          = document.getElementById("email");
-const password       = document.getElementById("pass");
+const nom            = document.getElementById("lastname");
+const prenom         = document.getElementById("firstname");
+const pseudo         = document.getElementById("username");
+const email          = document.getElementById("useremail");
+const password       = document.getElementById("userpwd");
 const secondPassword = document.getElementById("verif");
 
 if(nom != null) {
@@ -39,9 +40,6 @@ if(secondPassword != null) {
     verifSecondPassword = () => {return testLabels(empty, secondPassword) && testLabels(sameContent, secondPassword)}
     secondPassword.addEventListener("blur", verifSecondPassword);
 }
-
-
-
 
 var buttonLogIn = document.getElementById("logIn")
 if (buttonLogIn != null) buttonLogIn.onclick = function() {
@@ -94,6 +92,19 @@ function checkPassword(value) {
     return "";
 }
 
+function checkBirthday(value) {
+    var jour = Date.prototype.getDay();
+    var mois = Date.prototype.getMonth();
+    var annee = Date.prototype.getFullYear();
+    var exp = /^[0-9]{2,2}[/][0-9]{2,2}[/][0-9]{4,4}$/;
+    if (!exp.test(value)) {
+        return "Expression de la date invalide (dd/mm/yyyy)!";
+    }
+    var liste = value.split('/');
+    //if (liste[2] > annee)
+    // A CONTINUER
+}
+
 function empty(value) {
     if (value.length == 0) {
         return "Le champ est vide.";
@@ -101,7 +112,7 @@ function empty(value) {
     return "";
 }
 
-function sameContent(content, compare = document.getElementById("pass").value) {
+function sameContent(content, compare = document.getElementById("userpwd").value) {
     if (content != compare) {
         return "Entrer le même mot de passe dans 'Confirmer mot de passe'.";
     }
@@ -179,12 +190,15 @@ function checkValue() {
                 return;
             }
             singUp = true;
-        }
+        }  
     }
 
-    if (singUp) {
-        writeMessage("Vous êtes enregistré.", "rgb(33, 211, 42)")
-    } else {
+    if (singUp) 
+    {
+        register();
+    } 
+    else 
+    {
         writeMessage("Vous êtes connécté.", "rgb(33, 211, 42)")
     }
 
@@ -197,6 +211,25 @@ function checkValue() {
     console.log(profileTxt);
 
     clearAll();
+}
+
+function register()
+{
+    try {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }catch (e) {
+        xhr = new XMLHttpRequest();
+    }
+    var formData = new FormData(registerForm);
+    console.log(formData);
+    xhr.open("POST", "../htbin/register.py");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xht.status == 200)
+        {
+            writeMessage("Vous êtes enregistré.", "rgb(33, 211, 42)");
+        }
+    };
+    xhr.send(formData);
 }
 
 async function invalidArguments(argument, message = "Erreur") {
@@ -227,8 +260,6 @@ function clearAll() {
 function scroll() {
     offSet = 48
     var topBar = document.getElementsByClassName("topBar")
-
-
 
     if (window.pageYOffset < offSet) {
         pos = "absolute"

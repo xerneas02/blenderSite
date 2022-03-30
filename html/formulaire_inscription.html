@@ -21,7 +21,7 @@
         <div class="pageFormulaire">
             <div><img src="../img/Blender_logo.png"></div>
             <p>Se connecter avec un compte<br>Blender</p>
-            <form action="/my-handling-form-page" method="post">
+            <form method="post" id="regForm">
                 <div class="pageInscription">
                     <div>
                         <select id="selection_pays" name="user_pays" placeholder="Pays">
@@ -30,22 +30,22 @@
                                 </option>
                             </select>
                         <div>
-                            <input type="text" class="label" id="nom" name="Nom" placeholder="Nom" />
+                            <input type="text" class="label" id="lastname" name="lastname" placeholder="Nom" />
                         </div>
                         <div>
-                            <input type="text" class="label" id="prenom" name="Prenom" placeholder="Prenom" />
+                            <input type="text" class="label" id="firstname" name="firstname" placeholder="Prenom" />
                         </div>
                         <div>
-                            <input type="text" class="label" id="pseudo" name="Pseudo" placeholder="Pseudo" />
+                            <input type="text" class="label" id="username" name="username" placeholder="Pseudo" />
                         </div>
                         <div>
-
+                            <input type="text" class="label" id="birthday" name="birthday" placeholder="dd/mm/yyyy"/>
                         </div>
                         <div>
-                            <input type="text" class="label" id="email" name="Addresse email" placeholder="Adresse e-mail" />
+                            <input type="text" class="label" id="useremail" name="useremail" placeholder="Adresse e-mail" />
                         </div>
                         <div>
-                            <input type="password" class="label" id="pass" name="Mot de passe" placeholder="Mot de passe" />
+                            <input type="password" class="label" id="userpwd" name="userpwd" placeholder="Mot de passe" />
                         </div>
                         <div>
                             <input type="password" class="label" id="verif" name="Confirmer mot de passe" placeholder="Confirmer mot de passe" />
