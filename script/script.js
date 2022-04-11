@@ -1,3 +1,4 @@
+scroll();
 window.onscroll = function() { scroll() }
 
 $("#top").load("../html/top.html");
@@ -10,6 +11,7 @@ const pseudo         = document.getElementById("username");
 const email          = document.getElementById("useremail");
 const password       = document.getElementById("userpwd");
 const secondPassword = document.getElementById("verif");
+const birthday       = document.getElementById("birthday");
 
 if(nom != null) {
     verifNom = () => {return testLabels(empty, nom)}
@@ -40,6 +42,12 @@ if(secondPassword != null) {
     verifSecondPassword = () => {return testLabels(empty, secondPassword) && testLabels(sameContent, secondPassword)}
     secondPassword.addEventListener("blur", verifSecondPassword);
 }
+
+if(birthday != null) {
+    verifBirthday = () => {return testLabels(empty, birthday) && testLabels(checkBirthday, birthday)}
+    birthday.addEventListener("blur", verifBirthday);
+}
+
 
 var buttonLogIn = document.getElementById("logIn")
 if (buttonLogIn != null) buttonLogIn.onclick = function() {
@@ -93,16 +101,35 @@ function checkPassword(value) {
 }
 
 function checkBirthday(value) {
-    var jour = Date.prototype.getDay();
-    var mois = Date.prototype.getMonth();
-    var annee = Date.prototype.getFullYear();
+    var auj = new Date();
+    var jour = auj.getDay();
+    var mois = auj.getMonth();
+    var annee = auj.getFullYear();
     var exp = /^[0-9]{2,2}[/][0-9]{2,2}[/][0-9]{4,4}$/;
     if (!exp.test(value)) {
-        return "Expression de la date invalide (dd/mm/yyyy)!";
+        return "Expression de la date invalide (jj/mm/aaaa)!";
     }
+    
     var liste = value.split('/');
-    //if (liste[2] > annee)
-    // A CONTINUER
+    if (liste[2] > annee){
+        return "Annee de la date invalide!";
+    }
+    else if (liste[2] == annee && liste[1] > mois){
+        return "Mois de la date invalide!";
+    }
+    else if (liste[1] == mois && liste[0] > jour){
+        return "Jour de la date invalide!";
+    }
+    
+    dateStr = liste[0] + "-" + liste[1] + "-" + liste[2].substring(2, 4);
+    console.log(dateStr);
+    let date = Date.parse(dateStr);
+    console.log(date)
+    /*
+    if (isNaN(date)){
+        return "Date invalide!";
+    }*/
+    return "";
 }
 
 function empty(value) {
@@ -165,6 +192,14 @@ function checkValue() {
                 return;
             }
         } 
+
+        else if (labels[i].id == "birthday") {
+            if (!testLabels(checkBirthday, labels[i])) {
+                datas.push(labels[i].value);
+                clear("birthday");
+                return;
+            }
+        } 
         
         else if (labels[i].id == "pseudo") {
             if (!testLabels(checkPseudo, labels[i])) {
@@ -224,7 +259,7 @@ function register()
     console.log(formData);
     xhr.open("POST", "../htbin/register.py");
     xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xht.status == 200)
+        if (xhr.readyState == 4 && xhr.status == 200)
         {
             writeMessage("Vous êtes enregistré.", "rgb(33, 211, 42)");
         }
