@@ -1,0 +1,201 @@
+body {
+    color: antiquewhite;
+    background-color: rgb(18, 18, 18);
+    overflow-x: hidden;
+}
+
+/* background du formulaire */
+div.backgroundFormulaire {
+    margin: 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+    background-color: rgb(18, 18, 18);
+    display: flex;
+}
+
+/* block gris du formulaire devant le background */
+div.pageFormulaire {
+    margin: 0px;
+    top: 10%;
+    width: 30%;
+    height: 85%;
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(32, 32, 32);
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-align: center;
+}
+
+/* gestion des placeholder dans les zones de texte du formulaire  */
+::placeholder 
+{
+    color: rgb(255, 255, 255);
+}
+
+/* gestion de la taille du logo blender dans le formulaire */
+.pageFormulaire img 
+{
+    max-width:  25%;
+    max-height: 25%;
+}
+
+/* gestion des textes dans le formulaire */
+.pageFormulaire p 
+{
+    font-size: 150%;
+}
+
+/* Gestion de la police de "se connecté" */
+#connexionCompte 
+{
+    font-size: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* lien se trouvant dans la balise "page formulaire" */
+.pageFormulaire a 
+{
+    text-decoration: none;
+    color: #008035;
+}
+
+/* le formulaire est stocké dans 100% de la page formulaire (le block gris clair devant le background) */
+form 
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* espace vide entre chaque zone de texte du formulaire */
+form div+div 
+{
+    margin-top: 0.5em;
+}
+
+input,
+textarea,
+button 
+{
+    /* Pour s'assurer que tous les champs texte ont la même police.
+	   Par défaut, les textarea ont une police monospace */
+    font: 1em sans-serif;
+    /* Pour que tous les champs texte aient la même dimension */
+    width: 60%;
+    height: 50px;
+    box-sizing: border-box;
+    /* Pour harmoniser le look & feel des bordures des champs texte */
+    border: 1px solid rgb(153, 153, 153);
+    border-radius: 5px;
+    background-color: rgb(32, 32, 32);
+    color: antiquewhite;
+}
+
+/* --- BOUTON S'INSCRIRE ---*/
+button 
+{
+    /* Cette marge supplémentaire représente grosso modo le même espace que celui
+    entre les étiquettes et les champs texte */
+    width: 53%;
+    margin-left: .5em;
+    background-color: #008035;
+}
+
+button:hover 
+{
+    background-color: #004b1f;
+    cursor: pointer;
+}
+/* ------------------------*/
+
+.linkBox a:hover 
+{
+    display: block;
+    background-color: rgb(211, 211, 211);
+    color: #00421c;
+}
+
+
+#selection_pays 
+{
+    /* Pour s'assurer que tous les champs texte ont la même police.
+	   Par défaut, les textarea ont une police monospace */
+       font: 1em sans-serif;
+       /* Pour que tous les champs texte aient la même dimension */
+       width: 60%;
+       height: 50px;
+       box-sizing: border-box;
+       /* Pour harmoniser le look & feel des bordures des champs texte */
+       border: 1px solid rgb(153, 153, 153);
+       border-radius: 5px;
+       background-color: rgb(32, 32, 32);
+       color: antiquewhite;
+       margin-top: 0.5em;
+       margin-bottom: 0.5em;
+}
+
+
+/* Gestion de la scrollbar  */
+.pageFormulaire ::-webkit-scrollbar 
+{
+    width: 15px;
+}
+/* Modifie la barre de défilement (fondu de couleur) */
+.pageFormulaire ::-webkit-scrollbar-track 
+{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+/* Modifie le bouton permettant de défiler (situé dans la barre de défilement) */
+.pageFormulaire ::-webkit-scrollbar-thumb 
+{
+    background: rgb(124, 124, 124);
+    border-radius: 10px;
+}
+/* Modifie la couleur du bouton de défilement lorsque l'on passe dessus avec la souris */
+.pageFormulaire ::-webkit-scrollbar-thumb:hover 
+{
+    background: #575757;
+}
+
+select option {
+    margin: 40px;
+    background: rgba(70, 70, 70, 0.3);
+    color: rgb(195, 195, 195);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+select option :hover {
+    margin: 40px;
+    background: rgba(255, 255, 255, 0.3)!important;
+    color: rgb(192, 0, 0);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+option {
+    padding: 0 30px 0 10px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    background: #333;
+    border-top: #222 solid 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    pointer-events: none;
+    order: 2;
+    z-index: 1;
+    transition: #333 .4s ease-in-out;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+option:hover {
+    background: #666;
+}
