@@ -1,8 +1,31 @@
+//Pour attacher ou détacher la bar du haut de l'écran
 scroll();
 window.onscroll = function() { scroll() }
 
+//Pour ajouter dans tout les html la top bar
 $("#top").load("../html/top.html");
 
+
+function scroll() {
+    offSet = 48
+    var topBar = document.getElementsByClassName("topBar")
+
+    if (window.pageYOffset < offSet) {
+        pos = "absolute"
+        T = offSet.toString() + "px"
+    } else {
+        pos = "fixed"
+        T = "0px"
+    }
+    for (i = 0; i < topBar.length; i++) {
+        topBar[i].style.position = pos
+        topBar[i].style.top = T
+    }
+}
+
+
+
+//Pour récupérer tout les elements de formulaire
 const registerForm   = document.getElementById("regForm");
 const pays           = document.getElementById("selection_pays");
 const nom            = document.getElementById("lastname");
@@ -13,6 +36,8 @@ const password       = document.getElementById("userpwd");
 const secondPassword = document.getElementById("verif");
 const birthday       = document.getElementById("birthdate");
 
+//Ajout de la fonction du test de validité de la valeur dans le champ
+//la fonction est ajouté à l'évenemment blur qui est activé quand on quite le champ
 if(nom != null) {
     verifNom = () => {return testLabels(empty, nom)}
     nom.addEventListener("blur", verifNom);
@@ -49,9 +74,12 @@ if(birthday != null) {
 }
 
 
+//ajout du check des labels quand le bouton de verif et clicé
 var buttonLogIn = document.getElementById("logIn");
 if(buttonLogIn != null) {buttonLogIn.addEventListener("click", checkValue);}
 
+//récupére la liste de tout les pays depuis le fichier country.txt et les ajoutent 
+//a la selction des pays
 Promise.all([fetch('../html/country.txt').then(response => response.text())]).then(([pays_list]) => {
     pays_list = pays_list.split("\n");
     pays_list.forEach(element => {
@@ -59,10 +87,12 @@ Promise.all([fetch('../html/country.txt').then(response => response.text())]).th
     });
 });
 
+//fonction qui fait une pause de x miliseconde
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+//les fonctions de verification des labels
 function checkPseudo(pwd) {
     var nbre = /....../;
     if (!nbre.test(pwd)) {
@@ -148,6 +178,9 @@ function emptyPays(value){
     return "";
 }
 
+//Fonction qui prend en parametre la fonction de test et le label à tester
+//et qui retourne vrai ou faux en fonction de si le label et validé ou non
+//et si il ne l'est pas elle affiche le message d'erreur
 function testLabels(testFunc, label) {
     message = testFunc(label.value);
     if (0 == message.length) return true;
@@ -155,6 +188,8 @@ function testLabels(testFunc, label) {
     return false;
 }
 
+
+//fonction qui test tout les labels appelé par le boutton
 function checkValue() {
     var labels = document.getElementsByClassName("label");
     var singUp = false;
@@ -242,6 +277,8 @@ function checkValue() {
     clearAll();
 }
 
+//fonction qui appel le fichier register.py pour enregistrer les informations pour
+//et si l'enregistremment a marché elle écrit "Vous êtes enregistré."
 function register()
 {
     try {
@@ -261,6 +298,8 @@ function register()
     xhr.send(formData);
 }
 
+//Cette fonction affiche un message d'erreur en rouge et affiche le label où est 
+//le problème en rouge pendant 100 ms
 async function invalidArguments(argument, message = "Erreur") {
     argument.style.backgroundColor = "red";
     writeMessage(message, "rgb(173, 0, 0)");
@@ -268,37 +307,23 @@ async function invalidArguments(argument, message = "Erreur") {
     argument.style.backgroundColor = "rgb(32, 32, 32)";
 }
 
+//Cette fonction écrit un message en bas du formulaire dans la couleur choisi
 function writeMessage(message, color = "red") {
     text = document.getElementById("message");
     text.style.color = color;
     text.textContent = message;
 }
 
+//vide le label choisi
 function clear(labelId) {
     var label = document.getElementById(labelId);
     label.value = "";
 }
 
+//vide tous les label
 function clearAll() {
     var labels = document.getElementsByClassName("label");
     for (i = 0; i < labels.length; i++) {
         labels[i].value = "";
-    }
-}
-
-function scroll() {
-    offSet = 48
-    var topBar = document.getElementsByClassName("topBar")
-
-    if (window.pageYOffset < offSet) {
-        pos = "absolute"
-        T = offSet.toString() + "px"
-    } else {
-        pos = "fixed"
-        T = "0px"
-    }
-    for (i = 0; i < topBar.length; i++) {
-        topBar[i].style.position = pos
-        topBar[i].style.top = T
     }
 }
