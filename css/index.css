@@ -32,6 +32,11 @@ img
     width: 50%;
 }
 
+.littleImg
+{
+    width: 20%;
+}
+
 /* --- Liste à puce --- */
 li {font-size: large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 li, #blue { list-style-image: url(../img/blue.png);}
@@ -39,6 +44,11 @@ li, #yellow { list-style-image: url(../img/yellow.png); }
 li, #red { list-style-image: url(../img/red.png); }
 li, #purple { list-style-image: url(../img/purple.png); }
 li, #green { list-style-image: url(../img/green.png); }
+li, #vide 
+{ 
+    font-size: large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    list-style: disc;
+}
 
 /* ------------- TABLEAU --------------*/
 /* Trace les bordures du tableau */
