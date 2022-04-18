@@ -103,7 +103,7 @@ function checkBirthday(value) {
     var jour = auj.getDay();
     var mois = auj.getMonth();
     var annee = auj.getFullYear();
-    var exp = /^[0-9]{2,2}[/][0-9]{2,2}[/][0-9]{4,4}$/;
+    var exp = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
     if (!exp.test(value)) {
         return "Expression de la date invalide (jj/mm/aaaa)!";
     }
@@ -118,15 +118,14 @@ function checkBirthday(value) {
     else if (liste[1] == mois && liste[0] > jour){
         return "Jour de la date invalide!";
     }
-    
-    dateStr = liste[0] + "-" + liste[1] + "-" + liste[2].substring(2, 4);
-    console.log(dateStr);
-    let date = Date.parse(dateStr);
+    value = value.replace(exp, "$3-$2-$1")
+    console.log(value);
+    let date = new Date(value);
     console.log(date)
-    /*
+    
     if (isNaN(date)){
         return "Date invalide!";
-    }*/
+    }
     return "";
 }
 
