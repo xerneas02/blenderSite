@@ -49,10 +49,8 @@ if(birthday != null) {
 }
 
 
-var buttonLogIn = document.getElementById("logIn")
-if (buttonLogIn != null) buttonLogIn.onclick = function() {
-    checkValue();
-}
+var buttonLogIn = document.getElementById("logIn");
+if(buttonLogIn != null) {buttonLogIn.addEventListener("click", checkValue);}
 
 Promise.all([fetch('../html/country.txt').then(response => response.text())]).then(([pays_list]) => {
     pays_list = pays_list.split("\n");

@@ -322,24 +322,6 @@ option:hover {
     background: #666;
 }
 
-@media screen and (max-width: 1282px) {
-    .boxSignBox {
-        font-size: 75%;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .boxSignBox {
-        font-size: 65%;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .boxSignBox {
-        font-size: 50%;
-    }
-}
-
 @media screen and (max-width: 800px) {
     .linkBox {
         width: 23%;
@@ -349,9 +331,6 @@ option:hover {
 @media screen and (max-width: 680px) {
     .linkBox {
         width: 25%;
-    }
-    .boxSignBox {
-        font-size: 60%;
     }
 }
 
@@ -365,9 +344,6 @@ option:hover {
     .linkBox {
         width: 33%;
     }
-    .boxSignBox {
-        font-size: 50%;
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -379,8 +355,5 @@ option:hover {
 @media screen and (max-width: 400px) {
     .linkBox {
         font-size: 20px;
-    }
-    .boxSignBox {
-        font-size: 45%;
     }
 }

@@ -124,3 +124,47 @@ button:hover {
     background-color: rgb(211, 211, 211);
     color: #00421c;
 }
+
+@media screen and (max-width: 1825px) {
+    .boxSignBox {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .boxSignBox {
+        font-size: 70%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .boxSignBox {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .boxSignBox {
+        font-size: 50%;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    div.signBox {
+        width : 8%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .boxSignBox {
+        font-size: 40%;
+        width : 90%
+    }
+    div.signBox {
+        width : 18%;
+    }
+    div.toptopBar {
+        justify-content: left;
+    }
+}
