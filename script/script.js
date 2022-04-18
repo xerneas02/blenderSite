@@ -73,7 +73,6 @@ if(birthday != null) {
     birthday.addEventListener("blur", verifBirthday);
 }
 
-
 //ajout du check des labels quand le bouton de verif et clicé
 var buttonLogIn = document.getElementById("logIn");
 if(buttonLogIn != null) {buttonLogIn.addEventListener("click", checkValue);}
@@ -290,6 +289,7 @@ function register()
     console.log(formData);
     xhr.open("POST", "../htbin/register.py");
     xhr.onreadystatechange = function() {
+        console.log(this.responseText);
         if (xhr.readyState == 4 && xhr.status == 200)
         {
             writeMessage("Vous êtes enregistré.", "rgb(33, 211, 42)");
