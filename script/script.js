@@ -11,7 +11,7 @@ const pseudo         = document.getElementById("username");
 const email          = document.getElementById("useremail");
 const password       = document.getElementById("userpwd");
 const secondPassword = document.getElementById("verif");
-const birthday       = document.getElementById("birthday");
+const birthday       = document.getElementById("birthdate");
 
 if(nom != null) {
     verifNom = () => {return testLabels(empty, nom)}
@@ -114,9 +114,6 @@ function checkBirthday(value) {
     }
     else if (liste[2] == annee && liste[1] > mois){
         return "Mois de la date invalide!";
-    }
-    else if (liste[1] == mois && liste[0] > jour){
-        return "Jour de la date invalide!";
     }
     value = value.replace(exp, "$3-$2-$1")
     console.log(value);
@@ -304,5 +301,4 @@ function scroll() {
         topBar[i].style.position = pos
         topBar[i].style.top = T
     }
-
 }
