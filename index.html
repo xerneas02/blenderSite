@@ -20,7 +20,7 @@
     <div class="aligneCenter">
         <model-viewer src="./3DObjects/blenderLogo.glb" alt="Charmeleon" auto-rotate camera-controls ios-src="./3DObjects/blenderLogo.glb"></model-viewer>
     </div>
-    <div class="aligneLeft">
+    <div class="bigBlock">
         <h1>Présentation</h1>
         <p>
             Blender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D, créé en 1998. Il est actuellement développé par la Fondation Blender.
@@ -126,8 +126,46 @@
         <p>
             La scene est sans doute l'endroit ou vous passerez la plupart de votre temps, c'est ici que vous concevez votre scène,
             ajoutez des objets, modéliser..etc
+            Comment vous déplacez dans votre scène?
+            Voici plusieurs racourcis clavier qui pourraient vous être utile:
         </p>
+        <table class="table-style">
+            <thead>
+                <tr>
+                    <th>Touches</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Clique gauche</td>
+                    <td>Sélectionne votre objet</td>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>Déplace votre caméra jusqu'à l'objet sélectionner</td>
+                </tr>
+                <tr>
+                    <td>Clique molette</td>
+                    <td>Vous déplace selon un point</td>
+                </tr>
+                <tr>
+                    <td>shift + `</td>
+                    <td>Passer en vode "vol"</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Passer en vue mode "caméra"</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="large">Une fois votre objet sélectionné, il est possible de le déplacer avec votre souris à l'aide des touches d'axes ou de la touche g:</p>
+        <div id="watchme"><img class="littleImg" src="./img/cube.png" alt="cube" /></div>
+        <p class="large">il est aussi possible de modifier la taille de votre objet:</p>
+        <div id="watchme2"><img class="littleImg" src="./img/cube.png" alt="cube" /></div>
+        <p class="large">Ou encore de lui exercer une rotation:</p>
     </div>   
     <script src="./script/script.js" async defer></script>
+    <script src="./script/index.js" async defer></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 scroll();
 window.onscroll = function() { scroll() }
 
-$("#top").load("../html/top.html");
+$("#top").load("../top.html");
 
 const registerForm   = document.getElementById("regForm");
 const pays           = document.getElementById("selection_pays");
@@ -51,7 +51,7 @@ if(birthday != null) {
 var buttonLogIn = document.getElementById("logIn");
 if(buttonLogIn != null) {buttonLogIn.addEventListener("click", checkValue);}
 
-Promise.all([fetch('../html/country.txt').then(response => response.text())]).then(([pays_list]) => {
+Promise.all([fetch('../country.txt').then(response => response.text())]).then(([pays_list]) => {
     pays_list = pays_list.split("\n");
     pays_list.forEach(element => {
         $("#selection_pays").append("<option value ='" + element + "'>" + element + "</option>")
