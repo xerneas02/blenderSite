@@ -125,6 +125,26 @@ button:hover {
     color: #00421c;
 }
 
+::-webkit-scrollbar 
+{     
+    width: 10px;     
+    border: 5px solid rgba(86, 86, 86, 0);  
+}  
+::-webkit-scrollbar-track 
+{     
+    background: none; 
+}  
+::-webkit-scrollbar-thumb 
+{     
+    background: rgba(86, 86, 86, 0.4);     
+    border-radius: 10px;     
+    border: 5px solid rgba(86, 86, 86, 0); 
+}  
+::-webkit-scrollbar-thumb:hover 
+{      
+    background: rgba(86, 86, 86, 0.6); 
+}
+
 @media screen and (max-width: 1825px) {
     .boxSignBox {
         font-size: 80%;

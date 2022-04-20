@@ -11,15 +11,14 @@ var login = function() {
 
     xhr.onreadystatechange = function() { //Appelle une fonction au changement d'état.
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            let n = document.getElementById("result");
-            n.textContent = xhr.responseText;
-            document.getElementById("connecForm").append(n);
+            let message = document.getElementById("result");
+            message.textContent = xhr.responseText;
+            document.getElementById("connecForm").append(message);
         }
     }
 
     xhr.send("username=" + username + "&userpwd=" + userpwd );
 };
-
 
 var form = document.getElementById("connecForm");
 

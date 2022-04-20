@@ -111,6 +111,11 @@ tbody tr, td, th {
 tbody tr:nth-child(even){
     background-color: #454545;
 }
+
+footer
+{
+  width: 100%;
+}
 /* -----------------------------------------*/
 
 /* --- ANIMATION 1--- */
