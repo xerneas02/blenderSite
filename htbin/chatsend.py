@@ -24,12 +24,10 @@ data_file = open('../data/user.dat','rb')
 data = pickle.loads(data_file.read())
 data_file.close()
 
-
 form_data = dict()
 form = cgi.FieldStorage()
 for name in list(form.keys()):
 	form_data[name] = form.getfirst(name)
-
 
 if not 'msg' in form_data:
 	print((json.dumps(dict({'num': 1,'msg':'Erreur, le message est absent.'}))))
