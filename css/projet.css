@@ -4,7 +4,7 @@ body {
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("https://cdn.discordapp.com/attachments/564487711126454282/966150080191164486/unknown.png");
+    background-image: url("../img/color.png");
     filter: blur(0.3);
     overflow-x: hidden;
 }

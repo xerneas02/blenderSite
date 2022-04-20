@@ -11,9 +11,13 @@ var login = function() {
 
     xhr.onreadystatechange = function() { //Appelle une fonction au changement d'état.
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            let message = document.getElementById("result");
-            message.textContent = xhr.responseText;
-            document.getElementById("connecForm").append(message);
+            let label = document.getElementById("result");
+            label.textContent = xhr.responseText;
+            message = label.textContent;
+            color = "rgb(173, 0, 0)";
+            if(message.includes("Bonjour "))
+            {color = "rgb(33, 211, 42)";}
+            writeMessage(message, color);
         }
     }
 
@@ -27,3 +31,10 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
     login();
 }, true);
+
+
+function writeMessage(message, color = "red") {
+    text = document.getElementById("result");
+    text.style.color = color;
+    text.textContent = message;
+}

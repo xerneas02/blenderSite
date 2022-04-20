@@ -32,9 +32,9 @@ for name in list(form.keys()):
 
 
 if not 'username' in form_data:
-	print('Le nom d\'utilisateur ne doit pas être vide.')
+	print('Le nom d\'utilisateur ne doit pas etre vide.')
 elif not 'userpwd' in form_data:
-	print('Le mot de pass ne doit pas être vide.')
+	print('Le mot de pass ne doit pas etre vide.')
 elif form_data['username'] == data['username'] and form_data['userpwd'] == data['userpwd']:
 	print(("Bonjour %s %s !" % (data['firstname'], data['lastname'])))
 else:
