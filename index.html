@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/top.css">
     <link rel="stylesheet" href="./css/index.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 </head>
 
 <body>
-    <top id="top"></top>
+    <header id="top"></header>
     <div>
         <model-viewer src="./3DObjects/blenderLogo.glb" alt="Charmeleon" auto-rotate camera-controls ios-src="./3DObjects/blenderLogo.glb" class="model3D"></model-viewer>
     </div>
@@ -28,7 +28,7 @@
         </p>
 
         <h2>Interfaces</h2>
-        <figure role="figure" aria-label="Interface par défaut">
+        <figure aria-label="Interface par défaut">
             <img src="./img/interface.png" alt="Interface par défaut" />
             <figcaption>
                 Interface par défaut
@@ -39,19 +39,17 @@
             Néanmoins, il est important de vous rappeler quelques bases si vous voulez avoir une chance de sortir de ce labyrinthe de boutons.
             Commençons par vous présenter l'interface par plusieurs parties.
         </p>
-        <figure role="figure" aria-label="Interface par défaut">
+        <figure aria-label="Interface par défaut">
             <img src="./img/interface2.png" alt="Interface menu" />
         </figure>
-        <p>
-            <h3>Nous pouvons diviser cette interface en plusieurs parties:</h3>
-            <ul>
-                <li id="blue">Espaces de travail personnalisés pour différentes tâches telles que la modélisation, l'animation et l'écriture de scripts</li> 
-                <li id="yellow">Fenêtre de visualisation 3D en haut à gauche</li>
-                <li id="green">Outliner en haut à droite</li>
-                <li id="red">Propriétés en bas à droite</li>
-                <li id="purple">Ligne de temps en bas à gauche</li>
-            </ul>
-        </p>
+        <h3>Nous pouvons diviser cette interface en plusieurs parties:</h3>
+        <ul>
+            <li id="blue">Espaces de travail personnalisés pour différentes tâches telles que la modélisation, l'animation et l'écriture de scripts</li> 
+            <li id="yellow">Fenêtre de visualisation 3D en haut à gauche</li>
+            <li id="green">Outliner en haut à droite</li>
+            <li id="red">Propriétés en bas à droite</li>
+            <li id="purple">Ligne de temps en bas à gauche</li>
+        </ul>
         <table class="table-style">
             <thead>
                 <tr>
@@ -103,7 +101,7 @@
             </tbody>
         </table>
         <h2>Outliner</h2>
-        <figure role="figure" aria-label="Outliner">
+        <figure aria-label="Outliner">
             <img class="littleImg" src="./img/outliner.PNG" alt="Outliner" />
         </figure>
         <p>
@@ -114,13 +112,13 @@
             vous pouvez y ranger vos objets chien et chat.
             Cela permet en d'autres termes d'organiser explicitement votre projet.
             L'oeil et l'appareil photo à côté de chaque objet ont chacun leur rôle.
-            <ul>
-                <li id="vide"><strong> Oeil</strong>: Permet de rendre l'objet visible ou pas dans votre scène durant vos manipulations</li>
-                <li id="vide"><strong>Appareil photo</strong> : Permet d'activer ou désactiver la visibilité de l'objet en question durant le rendu final</li>
-            </ul>
         </p>
+        <ul>
+            <li class="vide"><strong> Oeil</strong>: Permet de rendre l'objet visible ou pas dans votre scène durant vos manipulations</li>
+            <li class="vide"><strong>Appareil photo</strong> : Permet d'activer ou désactiver la visibilité de l'objet en question durant le rendu final</li>
+        </ul>
         <h2>Scene</h2>
-        <figure role="figure" aria-label="Outliner">
+        <figure aria-label="Outliner">
             <img src="./img/scene.PNG" alt="Scene" />
         </figure>
         <p>
@@ -166,7 +164,7 @@
         <p class="large">Ou encore de lui exercer une rotation:</p>
         <div><img class="littleImg" src="./img/rotation.gif" alt="cube" id = "watchme3"/></div>
         <h2>Properties</h2>
-        <figure role="figure" aria-label="Properties">
+        <figure aria-label="Properties">
             <img class="littleImg" src="./img/properties.PNG" alt="Properties" />
         </figure>
         <p>
@@ -177,7 +175,7 @@
             comme vous le souhaitez.
         </p>
         <h2>TimeLine</h2>
-        <figure role="figure" aria-label="Properties">
+        <figure aria-label="Properties">
             <img class="littleImg" src="./img/timeline.png" alt="Properties" />
         </figure>
         <p>

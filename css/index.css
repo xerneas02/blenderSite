@@ -86,7 +86,7 @@ li, #yellow { list-style-image: url(../img/yellow.png); }
 li, #red { list-style-image: url(../img/red.png); }
 li, #purple { list-style-image: url(../img/purple.png); }
 li, #green { list-style-image: url(../img/green.png); }
-li, #vide 
+li, .vide 
 { 
     font-size: large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     list-style: disc;
