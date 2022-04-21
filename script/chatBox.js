@@ -4,6 +4,13 @@ let oldListe;
 var form = document.getElementById('formBox');
 form.onsubmit = function () {return false;};
 
+
+var input = document.getElementById('msg');
+input.addEventListener("keypress", function(e) {
+    tableInputKeyPress(e)
+}, true);
+
+
 function tableInputKeyPress(e){
     e=e||window.event;
     var key = e.keyCode;
