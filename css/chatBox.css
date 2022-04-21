@@ -57,3 +57,19 @@ body
 {
     color:rgb(227, 20, 20);
 }
+
+@media screen and (max-width: 1000px) 
+{
+    #formBox button
+    {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 800px) 
+{
+    #formBox button
+    {
+        font-size: 46%;
+    }
+}
