@@ -167,6 +167,10 @@ button:hover {
     .boxSignBox {
         font-size: 50%;
     }
+    .linkBox {
+        height: 80%;
+        font-size: 25px;
+    }
 
 }
 
@@ -174,6 +178,11 @@ button:hover {
     div.signBox {
         width : 8%;
     }
+    .linkBox {
+        height: 70%;
+        font-size: 20px;
+    }
+    
 }
 
 @media screen and (max-width: 800px) {
@@ -186,5 +195,25 @@ button:hover {
     }
     div.toptopBar {
         justify-content: left;
+    }
+    .linkBox {
+        height: 65%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .boxSignBox {
+        font-size: 40%;
+        width : 90%
+    }
+    div.signBox {
+        width : 18%;
+    }
+    div.toptopBar {
+        justify-content: left;
+    }
+    .linkBox {
+        font-size: 15px;
     }
 }

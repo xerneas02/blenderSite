@@ -199,3 +199,15 @@ option {
 option:hover {
     background: #666;
 }
+
+@media screen and (max-width: 1000px) {
+    div.pageFormulaire {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    div.pageFormulaire {
+        width: 80%;
+    }
+}

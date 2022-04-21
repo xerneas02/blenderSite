@@ -135,6 +135,7 @@ footer
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
 }
 
 .image1{ background-image: url("https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"); }
@@ -185,5 +186,46 @@ footer
     100% {
       width: 20%;
     }
-  }
+}
+
+#watchme3{
+  width: 30%;
+}
+
+
   /* ---------------*/
+
+@media screen and (max-width: 1200px) {
+  .bigBlock {
+      width: 90%;
+      align-items:flex-start;
+      align-content: flex-start; 
+  }
+  .slidein {
+    animation-duration: 5s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes slidein {
+    0% {
+      margin-left: 0%;
+      width: 20%;
+    }
+    50% {
+      margin-left: 50%;
+      width: 20%;
+    }
+    100% {
+      margin-left: 0%;
+      width: 20%;
+    }
+  }
+
+  p
+  {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: large;
+      width: 100%;
+  }
+}
