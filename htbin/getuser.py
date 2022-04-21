@@ -26,6 +26,4 @@ data = pickle.loads(data_file.read())
 data_file.close()
 
 
-
-
 print((json.dumps(data)))

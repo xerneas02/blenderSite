@@ -26,8 +26,8 @@ h1 {
     position: absolute;
     float: left;
     display: flex;
-    left: 35%;
-    width: 110%;
+    left: 72%;
+    width: 25%;
     font-size: 100%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -41,7 +41,7 @@ div.signBox {
     height: 75%;
     color: #eeeeee;
     border: solid;
-    width: 7%;
+    width: 100%;
     border-radius: 10px;
     border-width: 3px;
 }
@@ -163,7 +163,7 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
     .boxSignBox {
         font-size: 50%;
     }
@@ -175,9 +175,6 @@ button:hover {
 }
 
 @media screen and (max-width: 1000px) {
-    div.signBox {
-        width : 8%;
-    }
     .linkBox {
         height: 70%;
         font-size: 20px;
@@ -185,13 +182,9 @@ button:hover {
     
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 00px) {
     .boxSignBox {
         font-size: 40%;
-        width : 90%
-    }
-    div.signBox {
-        width : 18%;
     }
     div.toptopBar {
         justify-content: left;
@@ -205,15 +198,11 @@ button:hover {
 @media screen and (max-width: 700px) {
     .boxSignBox {
         font-size: 40%;
-        width : 90%
-    }
-    div.signBox {
-        width : 18%;
     }
     div.toptopBar {
         justify-content: left;
     }
     .linkBox {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
