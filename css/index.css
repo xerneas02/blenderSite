@@ -7,11 +7,18 @@ body{
     filter: blur(0.3);
 }
 
+/* --- MODEL 3D --- */
+.model3D
+{
+  position: relative;
+  height : 300px;
+  width  : auto;
+}
+
 /* --- BIG BLOCK --- */
 .bigBlock
 {
     margin: 0px;
-    top: 100px;
     width: 70%;
     height: 85%;
     border-radius: 10px;
