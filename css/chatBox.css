@@ -1,6 +1,7 @@
 body
 {
     overflow-x: hidden;
+    background-image: url("../img/backgroundChatBox.jpg");
 }
 
 #chatBox
@@ -12,6 +13,8 @@ body
     height: 50%;
     background-color: rgb(27, 27, 27);
     border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: inset;
 }
 
 #formBox
@@ -28,7 +31,7 @@ body
 {
     position:fixed;
     left: 25%;
-    top: 65%;
+    top: 65.5%;
     width: 45%;
     height: 5%;
     border-radius: 10px;
@@ -37,8 +40,8 @@ body
 #formBox button
 {
     position:fixed;
-    left: 65%;
-    top: 65%;
+    left: 65.5%;
+    top: 65.5%;
     width: 11%;
     height: 6%;
     border-radius: 10px;
