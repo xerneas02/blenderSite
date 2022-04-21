@@ -1,41 +1,179 @@
-body,
-html {
-  height: 100%;
+body {
+    color: antiquewhite;
+    background-color: rgb(0, 0, 0);
+    /*background-size: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-image: url("../img/indexBackground2.jpg");*/
+    filter: blur(0.3);
+    overflow-x: hidden;
 }
 
-.image 
+.backGround
 {
-    height: 50%;
+    position: fixed;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/refBackground.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
-.one 
+/* Place le titre "projet" au centre */
+.center
 {
-    background-image: url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: xx-large;
+    color: rgb(232, 125, 13);
 }
-.two 
+
+/* Block principal qui contient les sous-block */
+.firstBlock
 {
-    background-image: url("https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80");
+    /* utilise x% de larger et y% de hauteur de la page */
+    width: 80%;
+    height: 85%;
+    /* contour plus arrondi */
+    border-radius: 10px;
+    /* L'élément est retiré du flux normal et aucun espace n'est créé pour l'élément sur la page. */
+    position: relative;
+    flex-direction: column;
+    background-color: rgb(41, 41, 41);
+    font-family: 'Arial Black', Arial, sans-serif;
+    /* Il est flexible et ses éléments enfants le sont aussi */
+    display: flex;
+    justify-content: center;
+    /* centré et à 5% du top */
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
 }
-.three 
+
+/* Block secondaire qui contient les sous-block */
+.secondBlock
 {
-    background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1063&q=80");
+    /* utilise x% de larger et y% de hauteur de la page */
+    width: 100%;
+    height: 20%;
+    /* contour plus arrondi */
+    border-radius: 10px;
+    /* L'élément est retiré du flux normal et aucun espace n'est créé pour l'élément sur la page. */
+    position: relative;
+    flex-direction: row;
+    background-color: rgb(41, 41, 41);
+    font-family: 'Arial Black', Arial, sans-serif;
+    /* Il est flexible et ses éléments enfants le sont aussi */
+    display: flex;
+    justify-content: center;
 }
-.four 
+
+/* Block tertiaire qui contient les éléments à afficher */
+.thirdBlock
 {
-    background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    /* utilise x% de larger et y% de hauteur de la page */
+    width: 50%;
+    height: 300px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    /* contour plus arrondi */
+    /* L'élément est retiré du flux normal et aucun espace n'est créé pour l'élément sur la page. */
+    position: relative;
+    flex-direction: column;
+    background-color: rgb(27, 27, 27);
+    font-size: 120%;
+    font-family: 'Arial Black', Arial, sans-serif;
+    /* Il est flexible et ses éléments enfants le sont aussi */
+    display: flex;
+    /* centre par rapport à l'axe inversé (comme ici on est sur l'axe des colonnes, alors cela centre par rapport à l'axe horizontale */
+    align-items: center;
+    /*centre par rapport à l'axe principale (celui de colonne) */
+    justify-content: center;
 }
-.five 
+
+img
 {
-    background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    position: relative;
+    width: 500px;
+    height: 240px;
+    border-radius: 10px;
 }
-.six 
+
+img.full
 {
-    background-image: url("https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+    position: relative;
+    width: 700px;
+    height: 300px;
+    border-radius: 10px;
 }
-.seven 
+
+a
 {
-    background-image: url("https://images.unsplash.com/photo-1543269865-96ae30571b5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    color: white;
+}
+
+p
+{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+h2
+{
+    color:white;
+    font-size: 350%;
+}
+
+h3
+{
+    color:rgb(232, 125, 13);
+    font-size: 300%;
+}
+
+@media screen and (max-width: 64em) 
+{
+    h2 
+    {
+        color: white;
+        position: relative;
+        font-size: 170%;
+    }
+    h3
+    {
+        position: relative;
+        font-size: 170%;
+    }
+}
+    
+@media screen and (max-width: 50em) 
+{
+    h2
+    {
+        color: white;
+        position: relative;
+        font-size: 100%;
+    }
+    h3
+    {
+        position: relative;
+        font-size: 170%;
+    }
+}
+
+@media screen and (max-width: 30em)
+{
+    h2
+    {
+        color: white;
+        position: relative;
+        font-size: 70%;       
+    }
+        h3
+    {
+        position: relative;
+        font-size: 170%;
+    }
 }
