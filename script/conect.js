@@ -12,13 +12,15 @@ var login = function() {
     xhr.onreadystatechange = function() { //Appelle une fonction au changement d'état.
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             let label = document.getElementById("result");
+            var element = document.getElementById("link");
+            element.setAttribute("href", "");
+            element.innerHTML = "";
             label.textContent = xhr.responseText;
             message = label.textContent;
             color = "rgb(173, 0, 0)";
             if(message.includes("Bonjour ")){   
                 color   = "rgb(33, 211, 42)";
                 var link = "private.html";
-                var element = document.getElementById("link");
                 element.setAttribute("href", link);
                 element.innerHTML = "Private";
             }
