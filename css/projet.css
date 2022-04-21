@@ -31,7 +31,7 @@ body {
     /* L'élément est retiré du flux normal et aucun espace n'est créé pour l'élément sur la page. */
     position: relative;
     flex-direction: column;
-    background-color: rgb(65, 65, 65);
+    background-color: rgb(41, 41, 41);
     font-family: 'Arial Black', Arial, sans-serif;
     /* Il est flexible et ses éléments enfants le sont aussi */
     display: flex;

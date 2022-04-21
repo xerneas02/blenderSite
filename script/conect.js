@@ -22,7 +22,7 @@ var login = function() {
                 color   = "rgb(33, 211, 42)";
                 var link = "private.html";
                 element.setAttribute("href", link);
-                element.innerHTML = "Private";
+                element.innerHTML = "Accèdez à votre page personnelle: CLIQUEZ ICI!";
             }
             writeMessage(message, color);
         }
