@@ -147,6 +147,14 @@ h3
         font-size: 170%;
     }
 }
+
+@media screen and (max-width: 60em) 
+{
+    p
+    {
+        font-size: 70%;
+    }
+}
     
 @media screen and (max-width: 50em) 
 {
@@ -154,12 +162,21 @@ h3
     {
         color: white;
         position: relative;
-        font-size: 100%;
+        font-size: 90%;
     }
     h3
     {
         position: relative;
-        font-size: 170%;
+        font-size: 100%;
+    }
+    p
+    {
+        font-size: 55%;
+    }
+    .firstBlock
+    {
+        height: 30%;
+        top:30%
     }
 }
 
