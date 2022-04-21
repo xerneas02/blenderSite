@@ -147,7 +147,7 @@ footer
 
 
 /* --- ANIMATION 1--- */
-.slidein {
+#watchme {
     animation-duration: 5s;
     animation-name: slidein;
     animation-iteration-count: infinite;
@@ -169,7 +169,7 @@ footer
   }
   /* ---------------*/
   /* --- ANIMATION 2--- */
-.slidein2 {
+#watchme2 {
     animation-duration: 5s;
     animation-name: slidein2;
     animation-iteration-count: infinite;

@@ -1,6 +1,9 @@
 let liste;
 let oldListe;
 
+var form = document.getElementById('formBox');
+form.onsubmit = function () {return false;};
+
 function tableInputKeyPress(e){
     e=e||window.event;
     var key = e.keyCode;
