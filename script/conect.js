@@ -15,8 +15,13 @@ var login = function() {
             label.textContent = xhr.responseText;
             message = label.textContent;
             color = "rgb(173, 0, 0)";
-            if(message.includes("Bonjour "))
-            {color = "rgb(33, 211, 42)";}
+            if(message.includes("Bonjour ")){   
+                color   = "rgb(33, 211, 42)";
+                var link = "private.html";
+                var element = document.getElementById("link");
+                element.setAttribute("href", link);
+                element.innerHTML = "Private";
+            }
             writeMessage(message, color);
         }
     }
@@ -27,7 +32,6 @@ var login = function() {
 var form = document.getElementById("connecForm");
 
 form.addEventListener("submit", function(event) {
-    console.log("test");
     event.preventDefault();
     login();
 }, true);
