@@ -74,6 +74,7 @@ function drawMessage()
             let year = date.getFullYear(); year = year-2000;
             let date2 = day + "/" + mounth + "/" + year;
             let message = liste[i];
+            //console.log(liste[i]);
             let dater = message.date;
             let div = document.createElement("div");
             let name = message.user;
